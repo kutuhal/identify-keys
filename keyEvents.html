@@ -1,0 +1,31 @@
+<html> 
+<head>
+<title>Identy the Key(s)</title>
+<script>
+function handleEvent(oEvent) {
+ //console.log (oEvent);
+ var oTextbox = document.getElementById('txt1');
+ oTextbox.value += '\n>' + oEvent.type;
+ if (oEvent.type ==='keypress') {
+	 	var whichKey = String.fromCharCode(oEvent.which)
+	 	oTextbox.value += '\n Character is ' + whichKey;
+	 } 
+ oTextbox.value += '\n charCode is ' + oEvent.keyCode;
+ if (oEvent.type ==='keyup') {
+ 	oTextbox.value += '\n >>>>>>>>>>> ' ;
+	 }
+}
+
+</script>
+
+</head> 
+<body>
+
+<p>Type some characters into the first textbox.</p> 
+<p>
+	<textarea id='txtInput' rows=”15” cols=”50” onkeydown='handleEvent(event)' onkeyup='handleEvent(event)' onkeypress='handleEvent(event)' >
+	</textarea>
+</p>
+<p><textarea id='txt1' rows='35' cols=”50”></textarea></p> 
+</body>
+</html>
